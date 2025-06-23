@@ -1,6 +1,7 @@
 import CompanionsCard from "@/components/CompanionsCard";
 import CompanionsList from "@/components/CompanionsList";
 import CTA from "@/components/CTA";
+import { recentSessions } from "@/constants";
 import React from "react";
 
 const Page = () => {
@@ -18,7 +19,7 @@ const Page = () => {
         />
         <CompanionsCard
           id="12wqer3"
-          name="Countsy the NUmber Wizard"
+          name="Countsy the Number Wizard"
           topic="Derivatives & Integrals"
           subject="Maths"
           duration={45}
@@ -34,7 +35,11 @@ const Page = () => {
         />
       </section>
       <section className="home-section">
-        <CompanionsList />
+        <CompanionsList
+          title={"Recently completed session"}
+          companions={recentSessions}
+          className="w-2/3 max-lg:w-full"
+        />
         <CTA />
       </section>
     </main>
