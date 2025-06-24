@@ -11,11 +11,11 @@ const navItems = [
   },
   {
     label: "Companions",
-    href: "companions",
+    href: "/companions",
   },
   {
     label: "My journey",
-    href: "my-journey",
+    href: "/my-journey",
   },
 ];
 
