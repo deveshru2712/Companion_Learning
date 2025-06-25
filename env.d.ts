@@ -11,5 +11,7 @@ declare namespace NodeJS {
     NEXT_PUBLIC_SUPABASE_ANON_KEY: string;
 
     NEXT_PUBLIC_VAPI_WEB_TOKEN: string;
+
+    SENTRY_AUTH_TOKEN: string;
   }
 }
