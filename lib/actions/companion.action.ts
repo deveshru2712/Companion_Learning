@@ -112,3 +112,19 @@ export const getUserSession = async (userId: string, limit = 10) => {
 
   return data.map(({ companions }) => companions);
 };
+
+export const getUserCompanions = async (userId: string, limit = 10) => {
+  const supabase = createSupaBaseClient();
+
+  const { data, error } = await supabase
+    .from("Companions")
+    .select()
+    .eq("author", userId)
+    .limit(limit);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
+};
