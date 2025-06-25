@@ -20,10 +20,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { subjects } from "@/constants";
 import { Textarea } from "./ui/textarea";
 import { createCompanion } from "@/lib/actions/companion.action";
 import { redirect } from "next/navigation";
+import { subjects } from "@/constants";
 
 const formSchema = z.object({
   name: z.string().min(1, { message: "Companion is required" }),

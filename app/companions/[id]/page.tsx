@@ -1,3 +1,4 @@
+import CompanionComponent from "@/components/CompanionComponent";
 import { getCompanion } from "@/lib/actions/companion.action";
 import { getSubjectColor } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs/server";
@@ -48,6 +49,12 @@ const CompanionsSession = async ({ params }: CompanionsSessionPageProps) => {
           {companion.duration} minutes
         </div>
       </article>
+      <CompanionComponent
+        {...companion}
+        companionId={companion.id}
+        userName={user.firstName}
+        userImage={user.imageUrl}
+      />
     </main>
   );
 };

@@ -7,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { subjects } from "@/constants";
+import { subjects } from "@/components/constants";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { formUrlQuery, removeKeysFromUrlQuery } from "@jsmastery/utils";
