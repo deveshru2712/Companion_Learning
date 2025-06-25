@@ -128,3 +128,34 @@ export const getUserCompanions = async (userId: string, limit = 10) => {
 
   return data;
 };
+
+export const newCompanionPermission = async () => {
+  const { userId, has } = await auth();
+  const supabase = createSupaBaseClient();
+
+  let limit = 0;
+  if (has({ plan: "pro" })) {
+    return true;
+  } else if (has({ feature: "3_companion_limit" })) {
+    limit = 3;
+  } else if (has({ feature: "10_companion_limit" })) {
+    limit = 10;
+  }
+
+  const { data, error } = await supabase
+    .from("Companions")
+    .select("id", { count: "exact" })
+    .eq("author", userId);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  const companionsCount = data.length;
+
+  if (companionsCount >= limit) {
+    return false;
+  } else {
+    return true;
+  }
+};
