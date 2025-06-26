@@ -1,3 +1,5 @@
+`This is an project that i created while watching a youtube tutorial.`
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
